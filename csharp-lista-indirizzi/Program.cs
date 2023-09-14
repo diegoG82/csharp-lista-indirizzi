@@ -1,6 +1,4 @@
 ﻿
-
-
 using csharp_lista_indirizzi;
 
 //CREO LISTA INDIRIZZI
@@ -22,27 +20,25 @@ try
             string[] stringSplits = linea.Split(',');
 
 
-            if (stringSplits.Length < 3)
+            if (stringSplits.Length < 6)
             {
                 Console.WriteLine($"l'indirizzo {linea} non è leggibile!");
             }
+
             else
             {
-
-                char[] leadingCharactersToRemove = new char[] { ' ', '-' };
-
-                string name = stringSplits[0].TrimStart(leadingCharactersToRemove);
+                string name = stringSplits[0];
                 string surname = stringSplits[1];
                 string street = stringSplits[2];
                 string city = stringSplits[3];
                 string province = stringSplits[4];
                 int zip = int.Parse(stringSplits[5]);
 
-                Console.WriteLine($"indirizzo: {name}, {surname}, {street}, {city}, {province}, {zip}");
+                Console.WriteLine($"indirizzo di : {name} {surname} e': {street}, {city}, {province}, {zip}");
 
                 Indirizzo nuovoindirizzo = new Indirizzo(name, surname, street, city, province, zip);
 
-              indirizzi.Add(nuovoindirizzo);
+                indirizzi.Add(nuovoindirizzo);
 
             }
         }
@@ -58,7 +54,7 @@ catch (Exception e)
 }
 
 
-// LEGGO E STAMPO LA LISTA DEI MIEI LIBRI e nel frattempo la scrivo in un file:
+// LEGGO E STAMPO LA LISTA DEI MIEI INDIRIZZI 
 try
 {
 

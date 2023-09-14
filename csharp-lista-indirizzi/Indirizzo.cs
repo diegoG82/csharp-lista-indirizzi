@@ -24,10 +24,7 @@
             Zip = zip;
         }
 
-        public override string ToString()
-        {
-            return $"L'indirizzo di{this.Name} {this.Surname} e'{this.Street} {this.Province} {this.City} {this.Zip}";
-        }
+      
 
     }
 }
