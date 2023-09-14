@@ -14,15 +14,20 @@
 
         public int Zip { get; set; }
 
-
-        public Indirizzo(string street, string city, string province, int zip)
+        public Indirizzo(string name, string surname, string street, string city, string province, int zip)
         {
+            Name = name;
+            Surname = surname;
             Street = street;
             City = city;
             Province = province;
             Zip = zip;
         }
 
+        public override string ToString()
+        {
+            return $"L'indirizzo di{this.Name} {this.Surname} e'{this.Street} {this.Province} {this.City} {this.Zip}";
+        }
 
     }
 }
